@@ -9,11 +9,13 @@ namespace DariaLazarenko_hometask
             {
                 //SlotMachine();
                 //HomeTaskLesson1();
-                
 
+                //Test72();
+                //Test73(); - возведение в степень и "склеивание" нескольких чисел в одно
+                // int number = int.Parse(first.ToString() + second.ToString() + third.ToString());
             }
 
-            private static void HomeTaskLesson1()
+            static void HomeTaskLesson1()
             {
                 Console.WriteLine("Enter personal information");
 
@@ -61,9 +63,8 @@ namespace DariaLazarenko_hometask
                 Console.WriteLine("Phone number:");
                 string phone = Console.ReadLine();
                 phone = phone.Trim();
-                long phonenum = long.Parse(phone);
 
-                if (agenum <= 0 || heightnum <= 0 || housenum <= 0 || housingnum <= 0 || flatnum <= 0 || phonenum <= 0)
+                if (agenum <= 0 || heightnum <= 0 || housenum <= 0 || housingnum <= 0 || flatnum <= 0)
                 {
                     Console.Clear();
                     Console.WriteLine("Invalid data entry\nTry again");
@@ -76,11 +77,11 @@ namespace DariaLazarenko_hometask
                     Console.WriteLine($"Name: {name} {surname}");
                     Console.WriteLine($"Age: {agenum}\nHeight: {heightnum}");
                     Console.WriteLine($"Adress: {street} {housenum}/{housingnum}, flat {flatnum}");
-                    Console.WriteLine($"Phone: {phonenum}");
+                    Console.WriteLine($"Phone: {phone}");
                 }
             }
 
-            private static void SlotMachine()
+            static void SlotMachine()
             {
                 Console.WriteLine("Welcome!\nEnter your name:");
                 string name = Console.ReadLine();
@@ -153,7 +154,123 @@ namespace DariaLazarenko_hometask
                 }
             }
 
+            static void Test72()
+            {
+                /*
+                 * 72. Дано трехзначное число. Определить, какая из его цифр больше:
+                 * а) первая или последняя;
+                 * б) первая или вторая;
+                 * в) вторая или последняя.
+                 * 
+                 * я решила разобрать условие как 3 отдельных случая. 
+                 * можно запихнуть и в один, но тогда нужно проверять кучу условий.
+                 */
+
+                Random random = new Random();
+                int first = random.Next(1, 10);
+                int second = random.Next(1, 10);
+                int third = random.Next(1, 10);
+                Console.WriteLine($"{first}{second}{third}");
+                Console.WriteLine("Какая из цифр больше: первая или последняя?");
+
+                if (first > third)
+                {
+                    Console.WriteLine("первая цифра больше последней\n");
+                }
+                else if (third > first)
+                {
+                    Console.WriteLine("последняя цифра больше первой\n");
+                }
+                else
+                {
+                    Console.WriteLine("они равны\n");
+                }
+
+                int first1 = random.Next(1, 10);
+                int second1 = random.Next(1, 10);
+                int third1 = random.Next(1, 10);
+                Console.WriteLine($"{first1}{second1}{third1}");
+                Console.WriteLine("Какая из цифр больше: первая или вторая?");
+
+                if (first1 > second1)
+                {
+                    Console.WriteLine("первая цифра больше второй\n");
+                }
+                else if (second1 > first1)
+                {
+                    Console.WriteLine("вторая цифра больше первой\n");
+                }
+                else
+                {
+                    Console.WriteLine("они равны\n");
+                }
+
+                int first2 = random.Next(1, 10);
+                int second2 = random.Next(1, 10);
+                int third2 = random.Next(1, 10);
+                Console.WriteLine($"{first2}{second2}{third2}");
+                Console.WriteLine("Какая из цифр больше: вторая или последняя?");
+
+                if (third2 > second2)
+                {
+                    Console.WriteLine("последняя цифра больше второй\n");
+                }
+                else if (second2 > third2)
+                {
+                    Console.WriteLine("вторая цифра больше последней\n");
+                }
+                else
+                {
+                    Console.WriteLine("они равны\n");
+                }
+            }
+
+            static void Test73()
+            {
+                /*73.Дано трехзначное число. 
+                 * Определить, равен ли квадрат этого числа сумме кубов его цифр.
+                 * Вот вы приколист, а я ведь сразу и не поняла, что таких чисел просто нет
+                 */
+
+                Random ran = new Random();
+                int first = ran.Next(1, 10);
+                int second = ran.Next(1, 10);
+                int third = ran.Next(1, 10);
+                int number = int.Parse(first.ToString() + second.ToString() + third.ToString());
+
+                //double firstNum = Convert.ToDouble(first);
+                //double secondNum = Convert.ToDouble(second);
+                //double thirdNum = Convert.ToDouble(third);
+                //double newNumber = Convert.ToDouble(number);
+
+                Console.WriteLine($"{number}\nОпределить, равен ли квадрат этого числа сумме кубов его цифр.");
+
+                int x = 2;
+                int y = 3;
+
+                if (Math.Pow(number, x) == (Math.Pow(first, y) + Math.Pow(second, y) + Math.Pow(third, y)))
+                {
+                    Console.WriteLine($"{number}^2=({first}^3+{second}^3+{third}^3\nДа, квадрат этого числа равен сумме кубов его цифр");
+                }
+                else
+                {
+                    Console.WriteLine("Нет, квадрат этого числа не равен сумме кубов его цифр\nТаких в принципе не существует, как показал гугл,\nзато я выучила метод возведения в степень\n");
+                }
+
+                Console.WriteLine($"{number}\nОпределить, равено ли данное число сумме кубов его цифр.\nт.е. является ли оно числом Армстронга");
+
+                if (number == (Math.Pow(first, y) + Math.Pow(second, y) + Math.Pow(third, y)))
+                {
+                    Console.WriteLine($"{number}=({first}^3+{second}^3+{third}^3\nДа, это число Армстронга");
+                }
+                else
+                {
+                    Console.WriteLine("Нет, это не число Армстронга");
+                }
+            }
         }
+
+        
     }
 }
     
