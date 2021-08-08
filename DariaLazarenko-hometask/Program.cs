@@ -13,6 +13,7 @@ namespace DariaLazarenko_hometask
                 //Test72();
                 //Test73(); - возведение в степень и "склеивание" нескольких чисел в одно
                 // int number = int.Parse(first.ToString() + second.ToString() + third.ToString());
+                Test56();
             }
 
             static void HomeTaskLesson1()
@@ -268,9 +269,29 @@ namespace DariaLazarenko_hometask
                     Console.WriteLine("Нет, это не число Армстронга");
                 }
             }
-        }
 
-        
+            static void Test56()
+            {
+                //56.Если целое число m делится нацело на целое число n, 
+                //то вывести на экран частное от деления,
+                //в противном случае вывести сообщение «m на n нацело не делится».
+
+                Random random = new Random();
+                int m = random.Next(1001);
+                int n = random.Next(1001);
+                double newM = Convert.ToDouble(m);
+                Console.WriteLine($"{newM}/{n}={newM/n}");
+
+                if (newM > n && (newM % n) == 0)
+                {
+                    Console.WriteLine($"{newM % n}");
+                }
+                else
+                {
+                    Console.WriteLine("m на n нацело не делится");
+                }
+            }
+        }
     }
 }
     
