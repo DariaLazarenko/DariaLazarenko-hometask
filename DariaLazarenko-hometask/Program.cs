@@ -13,7 +13,7 @@ namespace DariaLazarenko_hometask
                 //Test72();
                 //Test73(); - возведение в степень и "склеивание" нескольких чисел в одно
                 // int number = int.Parse(first.ToString() + second.ToString() + third.ToString());
-                Test56();
+                //Test56();
             }
 
             static void HomeTaskLesson1()
