@@ -19,7 +19,7 @@ namespace DariaLazarenko_hometask
                 //Test7();
                 //Test2();
                 //Test3();
-                Test1();
+                //Test1();
 
                 //ExampleOfUsingCyclesAndMethods();
             }
@@ -348,6 +348,34 @@ namespace DariaLazarenko_hometask
                 //}
             }
 
+            static void Test1()
+            {
+                //В заданном натуральном числе поменять порядок
+                //цифр на обратный и сравнить полученное число с исходным.
+
+                int a = 12345;
+                string str = a.ToString();
+                char[] ar = str.ToCharArray();
+                Array.Reverse(ar);
+                str = new string(ar);
+                a = Convert.ToInt32(str);
+                Console.WriteLine(a);
+
+                //Второй способ, не понятно, нашла в интернете
+
+                Console.WriteLine("Enter number");
+                int x = int.Parse(Console.ReadLine());
+                int new_x = x % 10;
+                x /= 10;
+                while (x >= 1)
+                {
+                    new_x *= 10;
+                    new_x += x % 10;
+                    x /= 10;
+                }
+                Console.WriteLine(new_x);
+            }
+
             static void Test2()
             {
                 //Для заданного числа найти все его делители.
@@ -469,38 +497,7 @@ namespace DariaLazarenko_hometask
 
             }
         }
-
-        static void Test1()
-        {
-            //В заданном натуральном числе поменять порядок
-            //цифр на обратный и сравнить полученное число с исходным.
-
-            int a = 12345;
-            string str = a.ToString();
-            char[] ar = str.ToCharArray();
-            Array.Reverse(ar);
-            str = new string(ar);
-            a = Convert.ToInt32(str);
-            Console.WriteLine(a);
-
-            //Второй способ, не понятно, нашла в интернете
-
-            Console.WriteLine("Enter number");
-            int x = int.Parse(Console.ReadLine());
-            int new_x = x % 10;
-            x /= 10;
-            while (x >= 1)
-            {
-                new_x *= 10;
-                new_x += x % 10;
-                x /= 10;
-            }
-            Console.WriteLine(new_x);
-        }
     }
-
- 
-    
 }
     
 
