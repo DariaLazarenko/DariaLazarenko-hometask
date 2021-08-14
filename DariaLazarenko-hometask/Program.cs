@@ -22,6 +22,8 @@ namespace DariaLazarenko_hometask
                 //Test1();
 
                 //ExampleOfUsingCyclesAndMethods();
+                //ExampleOfUsingArray();
+
             }
 
             static void HomeTaskLesson1()
@@ -495,6 +497,68 @@ namespace DariaLazarenko_hometask
                     Console.WriteLine($"{x}  -  {y}");
                 }
 
+            }
+
+            static void ExampleOfUsingArray()
+            {
+                //Также можно сделать через сортировку, и это будет правильно,
+                //но лучше засунуть все в 1 цикл и все.
+                
+                Random r = new Random();
+                
+                int[] debit = new int[12];
+                int[] credit = new int[12];
+                int[] delta = new int[12];
+
+                int sum = 0;
+
+                int maxDelta = int.MinValue;
+
+                int minDelta = int.MaxValue;
+
+                int positiveDeltaCount = 0;
+
+                for (int i = 0; i < debit.Length; i++)
+                {
+                    debit[i] = r.Next(10000);
+                    credit[i] = r.Next(10000);
+
+                    delta[i] = debit[i] - credit[i];
+
+                    sum += delta[i];
+
+                    if (delta[i] >= maxDelta)
+                    {
+                        maxDelta = delta[i];
+                    }
+                    if (delta[i] <= minDelta && delta[i] >=0)
+                    {
+                        minDelta = delta[i];
+                    }
+                    if (delta[i] >= 0)
+                    {
+                        positiveDeltaCount++;
+                    }
+                }
+                Console.WriteLine("Прибыль");
+                foreach (int item1 in debit)
+                {
+                    Console.WriteLine(item1);
+                }
+                Console.WriteLine("Затраты");
+                foreach (int item2 in credit)
+                {
+                    Console.WriteLine(item2);
+                }
+                Console.WriteLine("Доход по месяцам");
+                foreach (int item3 in delta)
+                {
+                    Console.WriteLine(item3);
+                }
+                Console.WriteLine($"Сумма дохода: {sum}");
+                Console.WriteLine($"Максимальный доход за месяц: {maxDelta}");
+                Console.WriteLine($"Минимальный доход за месяц: {minDelta}");
+                Console.WriteLine($"Месяцы с положительным заработком: {positiveDeltaCount}");
             }
         }
     }
