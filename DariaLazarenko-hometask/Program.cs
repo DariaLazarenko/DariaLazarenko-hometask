@@ -20,6 +20,14 @@ namespace DariaLazarenko_hometask
                 //Test2();
                 //Test3();
                 //Test1();
+                // Далее будут тесты по массивам
+                //Test2arr();
+                //Test3arr();
+                //Test11arr();
+                // В 11 тесте на массивы есть метод поиска простых чисел isSimple
+                //Test12arr();
+                //Test13arr();
+
 
                 //ExampleOfUsingCyclesAndMethods();
                 //ExampleOfUsingArray();
@@ -295,7 +303,7 @@ namespace DariaLazarenko_hometask
                 int m = random.Next(1001);
                 int n = random.Next(1001);
                 double newM = Convert.ToDouble(m);
-                Console.WriteLine($"{newM}/{n}={newM/n}");
+                Console.WriteLine($"{newM}/{n}={newM / n}");
 
                 if (newM > n && (newM % n) == 0)
                 {
@@ -503,9 +511,9 @@ namespace DariaLazarenko_hometask
             {
                 //Также можно сделать через сортировку, и это будет правильно,
                 //но лучше засунуть все в 1 цикл и все.
-                
+
                 Random r = new Random();
-                
+
                 int[] debit = new int[12];
                 int[] credit = new int[12];
                 int[] delta = new int[12];
@@ -531,7 +539,7 @@ namespace DariaLazarenko_hometask
                     {
                         maxDelta = delta[i];
                     }
-                    if (delta[i] <= minDelta && delta[i] >=0)
+                    if (delta[i] <= minDelta && delta[i] >= 0)
                     {
                         minDelta = delta[i];
                     }
@@ -559,6 +567,203 @@ namespace DariaLazarenko_hometask
                 Console.WriteLine($"Максимальный доход за месяц: {maxDelta}");
                 Console.WriteLine($"Минимальный доход за месяц: {minDelta}");
                 Console.WriteLine($"Месяцы с положительным заработком: {positiveDeltaCount}");
+            }
+
+            static void Test2arr()
+            {
+                //Заполнить массив из десяти
+                //элементов значениями, вводимыми
+                //с клавиатуры в ходе выполнения программы.
+
+                int[] array = new int[10];
+                Console.WriteLine("Заполните массив из 10 элементов числами:");
+
+                for (int i = 0; i < array.Length; i++)
+                {
+                    int num = Convert.ToInt32(Console.ReadLine());
+                    array[i] = num;
+                }
+                Console.Clear();
+                Array.Sort(array);
+                Console.WriteLine("Отсортированный массив:");
+                foreach (int item in array)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+
+            static void Test3arr()
+            {
+                /*
+                 * Заполнить массив из пятнадцати элементов случайным образом:
+                 * а) вещественными значениями, лежащими в диапазоне от 0 до 1;
+                 * б) вещественными значениями х (22 ≤ х < 23);
+                 * в) вещественными значениями х (0 ≤ х < 10);
+                 * г) вещественными значениями х (–50 ≤ х < 50);
+                 * д) целыми значениями, лежащими в диапазоне от 0 до 10 включительно.
+                 */
+
+                double[] arr1 = new double[15];
+                double[] arr2 = new double[15];
+                double[] arr3 = new double[15];
+                double[] arr4 = new double[15];
+                int[] arr5 = new int[15];
+
+                Random r = new Random();
+
+                //a) вещественными значениями, лежащими в диапазоне от 0 до 1;
+                for (int i = 0; i < arr1.Length; i++)
+                {
+                    arr1[i] = r.NextDouble();
+                }
+                Console.WriteLine("1 массив:");
+                foreach (double item in arr1)
+                {
+                    Console.WriteLine(item);
+                }
+
+                //б) вещественными значениями х (22 ≤ х < 23);
+                for (int i = 0; i < arr2.Length; i++)
+                {
+                    arr2[i] = r.NextDouble() + 22;
+                }
+                Console.WriteLine("2 массив:");
+                foreach (double item in arr2)
+                {
+                    Console.WriteLine(item);
+                }
+
+                //в) вещественными значениями х (0 ≤ х < 10);
+                for (int i = 0; i < arr3.Length; i++)
+                {
+                    arr3[i] = r.NextDouble() * 10;
+                }
+                Console.WriteLine("3 массив:");
+                foreach (double item in arr3)
+                {
+                    Console.WriteLine(item);
+                }
+
+                //г) вещественными значениями х (–50 ≤ х < 50);
+                for (int i = 0; i < arr4.Length; i++)
+                {
+                    arr4[i] = r.NextDouble() * -100 + 50;
+                }
+                Console.WriteLine("4 массив:");
+                foreach (double item in arr4)
+                {
+                    Console.WriteLine(item);
+                }
+
+                //д) целыми значениями, лежащими в диапазоне от 0 до 10 включительно.
+                for (int i = 0; i < arr5.Length; i++)
+                {
+                    arr5[i] = r.Next(11);
+                }
+                Console.WriteLine("5 массив:");
+                foreach (int item in arr5)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+
+            static void Test11arr()
+            {
+                /*
+                 * Заполнить массив:
+                 * а) двадцатью первыми натуральными числами, делящимися нацело 
+                 * на 13 или на 17 и большими 300;
+                 */
+                 
+
+                int[] arr1 = new int[20];
+                int x = 300;
+
+                for (int i = 0; i < arr1.Length; i++)
+                {
+                    x++;
+                    for (;;)
+                    {
+                        if (x % 13 == 0 || x % 17 == 0)
+                        {
+                            arr1[i] = x;
+                            Console.WriteLine(arr1[i]);
+                            break;
+                        }
+                        else
+                        {
+                            x++;
+                        }
+                    }
+
+                }
+
+                // б) тридцатью первыми простыми числами.
+               
+                int[] arr2 = new int[30];
+                int y = 1;
+
+                for (int i = 0; i < arr2.Length; i++)
+                {
+                    y++;
+                    for (;;)
+                    {
+                        if (isSimple(y))
+                        {
+                            arr2[i] = y;
+                            Console.WriteLine(arr2[i]);
+                            break;
+                        }
+                        else
+                        {
+                            y++;
+                        }
+                    }
+                }
+                //метод который определяет простое число или нет
+                static bool isSimple(int N)
+                {
+                    //чтоб убедится простое число или нет достаточно проверить не делитсья ли 
+                    //число на числа до его половины
+                    for (int i = 2; i <= (N / 2); i++)
+                    {
+                        if (N % i == 0)
+                            return false;
+                    }
+                    return true;
+                }
+            }
+
+            static void Test12arr()
+            {
+                //12. Составить программу вывода на экран
+                //любого элемента массива.
+                //Номер элемента запрашивается у пользователя.
+
+                int[] arr = {3, 5, 78, 4, 55, 72, 34, 78, 88, 1};
+                //Random r = new Random();
+
+                //for (int i = 0; i < arr.Length; i++)
+                //{
+                //    arr[i] = r.Next(100);
+                //}
+
+                Console.WriteLine("Введите индекс массива от 0 до 9 включительно:");
+                int index = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine($"Значение {index} элемента:");
+                Console.WriteLine(arr[index]);
+            }
+
+            static void Test13arr()
+            {
+                //13. Вывести элементы массива на экран в обратном порядке.
+                // не будем использовать Reverse
+
+                int[] arr = {4, 5, 7, 8, 9, 3, 6};
+                for (int i = arr.Length - 1; i >= 0; i--)
+                {
+                    Console.WriteLine(arr[i]);
+                }
             }
         }
     }
