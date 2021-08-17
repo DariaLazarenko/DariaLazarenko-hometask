@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Home\\source\\repos\\Cycles\\Cycles\\Cycles.csproj": {}
+    "C:\\Users\\Home\\source\\repos\\CyclesRep\\Cycles\\Cycles\\Cycles.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Home\\source\\repos\\Cycles\\Cycles\\Cycles.csproj": {
+    "C:\\Users\\Home\\source\\repos\\CyclesRep\\Cycles\\Cycles\\Cycles.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Home\\source\\repos\\Cycles\\Cycles\\Cycles.csproj",
+        "projectUniqueName": "C:\\Users\\Home\\source\\repos\\CyclesRep\\Cycles\\Cycles\\Cycles.csproj",
         "projectName": "Cycles",
-        "projectPath": "C:\\Users\\Home\\source\\repos\\Cycles\\Cycles\\Cycles.csproj",
+        "projectPath": "C:\\Users\\Home\\source\\repos\\CyclesRep\\Cycles\\Cycles\\Cycles.csproj",
         "packagesPath": "C:\\Users\\Home\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Home\\source\\repos\\Cycles\\Cycles\\obj\\",
+        "outputPath": "C:\\Users\\Home\\source\\repos\\CyclesRep\\Cycles\\Cycles\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Home\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -54,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
