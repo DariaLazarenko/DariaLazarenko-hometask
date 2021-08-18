@@ -5,11 +5,13 @@ VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DariaLazarenko-hometask", "DariaLazarenko-hometask\DariaLazarenko-hometask.csproj", "{AB142C71-86F3-45AC-AB55-F1D3558F7DBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cycles", "Cycles\Cycles.csproj", "{FC5BBD6D-FDCB-44BA-A2F7-FA57E6A09833}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cycles", "Cycles\Cycles.csproj", "{FC5BBD6D-FDCB-44BA-A2F7-FA57E6A09833}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrays", "Arrays\Arrays.csproj", "{B4F44880-3506-4C98-9DC3-A22A1E1CE06E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arrays", "Arrays\Arrays.csproj", "{B4F44880-3506-4C98-9DC3-A22A1E1CE06E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.csproj", "{7A071352-1B52-4E2C-BA9B-6BCADB47082A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library", "Library\Library.csproj", "{7A071352-1B52-4E2C-BA9B-6BCADB47082A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArraysTests1", "ArraysTests1\ArraysTests1.csproj", "{6E517AFB-D865-4FEE-A9CA-F44D07CD45F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{7A071352-1B52-4E2C-BA9B-6BCADB47082A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A071352-1B52-4E2C-BA9B-6BCADB47082A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A071352-1B52-4E2C-BA9B-6BCADB47082A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E517AFB-D865-4FEE-A9CA-F44D07CD45F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E517AFB-D865-4FEE-A9CA-F44D07CD45F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E517AFB-D865-4FEE-A9CA-F44D07CD45F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E517AFB-D865-4FEE-A9CA-F44D07CD45F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
