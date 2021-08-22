@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Library
 {
@@ -35,12 +33,32 @@ namespace Library
             }
         }
 
-        //Подумать над методом поиска книг
+        //Метод поиска книг
 
-        //public Book BookSearch()
-        //{
+        public string BookSearch(Library shelf)
+        {
+            Console.WriteLine("Enter book`s title in English:");
+            string str = Console.ReadLine();
+            Book book1 = new Book(str);
 
-        //}
+            for (int i = 0; i < shelf.books.Length; i++)
+            {
+                if (book1.Title.ToUpper() == shelf.books[i].Title.ToUpper())
+                {
+                    book1 = shelf.books[i];
+                    Console.WriteLine(book1.Info());
+                    return book1.Info();
+                }
+                else
+                {
+                    i++;
+                }
+            }
+            Console.WriteLine("No book with entered name");
+            return "No book with entered name";
+        }
+
+        //Метод поиска дубликатов
 
         private bool SearchForDuplicates(Book[] books, Book book)
         {

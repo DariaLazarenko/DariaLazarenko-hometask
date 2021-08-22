@@ -49,6 +49,9 @@ namespace Library
             Console.WriteLine(alaska.Info());
             Console.WriteLine(threeMen.Info());
             Console.WriteLine(animalFarm.Info());
+
+            //Поиск книг
+            shelf1.BookSearch(shelf1);
         }
     }
 }

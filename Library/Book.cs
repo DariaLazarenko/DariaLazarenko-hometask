@@ -6,7 +6,7 @@ namespace Library
 {
     class Book
     {
-        public string Title { get; set; }
+        public string Title {get; set; }
         public int Year { get; set; }
         public Author[] Authors { get; set; }
         //public PublishingHouse PublishingHouse { get; set; }
@@ -17,6 +17,11 @@ namespace Library
         {
             Title = title;
             Year = year;
+        }
+
+        public Book(string title)
+        {
+            Title = title;
         }
 
         public Book(string title, int year, Author author)
