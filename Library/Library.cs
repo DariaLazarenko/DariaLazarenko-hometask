@@ -35,27 +35,35 @@ namespace Library
 
         //Метод поиска книг
 
-        public string BookSearch(Library shelf)
+        public bool BookSearch(Library shelf)
         {
-            Console.WriteLine("Enter book`s title in English:");
-            string str = Console.ReadLine();
-            Book book1 = new Book(str);
-
-            for (int i = 0; i < shelf.books.Length; i++)
+            if (shelf != null)
             {
-                if (book1.Title.ToUpper() == shelf.books[i].Title.ToUpper())
+                Console.WriteLine("Enter book`s title in English:");
+                string str = Console.ReadLine();
+                Book book1 = new Book(str);
+
+                for (int i = 0; i < shelf.books.Length; i++)
                 {
-                    book1 = shelf.books[i];
-                    Console.WriteLine(book1.Info());
-                    return book1.Info();
+                    if (book1.Title.ToUpper() == shelf.books[i].Title.ToUpper())
+                    {
+                        book1 = shelf.books[i];
+                        Console.WriteLine(book1.Info());
+                        return true;
+                    }
+                    else
+                    {
+                        i++;
+                    }
                 }
-                else
-                {
-                    i++;
-                }
+                Console.WriteLine("No book with entered name");
+                return false;
             }
-            Console.WriteLine("No book with entered name");
-            return "No book with entered name";
+            else
+            {
+                Console.WriteLine("Library object is empty");
+                return false;
+            }
         }
 
         //Метод поиска дубликатов
