@@ -28,29 +28,46 @@ namespace Weather
             }
             else
             {
-                MinTemp.ToString("Некорректное значение ");
-                MaxTemp.ToString("Некорректное значение ");
+                MinTemp = maxTemp;
+                MaxTemp = minTemp;
             }
 
             Cloudiness = cloudiness;
             Precipitation = precipitation;
 
-            if (Humidity >= 0)
+            if (humidity >= 0 && humidity <= 100)
             {
                 Humidity = humidity;
             }
-            else
+            else if (humidity > 100 && humidity >= 0)
             {
-                Humidity.ToString("Некорректное значение ");
+                while (humidity > 100)
+                {
+                    humidity /= 10; 
+                }
+                Humidity = humidity;
             }
-
-            if (WindStrength >= 0)
+            else if (humidity < 100)
+            {
+                humidity *= -1;
+                while (humidity > 100)
+                {
+                    humidity /= 10;
+                }
+                Humidity = humidity;
+            }
+            else if (humidity < 0)
+            {
+                Humidity = humidity * -1;
+            }
+            
+            if (windStrength >= 0)
             {
                 WindStrength = windStrength;
             }
             else
             {
-                WindStrength.ToString("Некорректное значение ");
+                WindStrength = windStrength * -1;
             }
 
             WindDirection = windDirection;
@@ -59,7 +76,7 @@ namespace Weather
         public string Info()
         {
             string info =
-                $"Дата: {Date.ToString()};\n" +
+                $"Дата: {Date.Date.ToString()};\n" +
                 $"Минимальная температура: {MinTemp}°C;\n" +
                 $"Максимальная температура: {MaxTemp}°C;\n";
 
@@ -107,6 +124,7 @@ namespace Weather
     }
     public enum Precipitation
     {
+        Без_осадков,
         Дождь,
         Снег,
         Дождь_со_снегом,
