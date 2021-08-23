@@ -39,7 +39,7 @@ namespace Weather
             {
                 Humidity = humidity;
             }
-            else if (humidity > 100 && humidity >= 0)
+            else if (humidity > 100)
             {
                 while (humidity > 100)
                 {
