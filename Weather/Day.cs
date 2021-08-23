@@ -19,7 +19,7 @@ namespace Weather
 
         public Day(DateTime date, int minTemp, int maxTemp, Cloudiness? cloudiness, Precipitation? precipitation, int humidity, int windStrength, WindDirection? windDirection)
         {
-            Date = date.Date;
+            Date = date;
 
             if (MinTemp <= MaxTemp)
             {
