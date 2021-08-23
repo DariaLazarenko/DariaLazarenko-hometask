@@ -19,7 +19,7 @@ namespace Weather
 
         public Day(DateTime date, int minTemp, int maxTemp, Cloudiness? cloudiness, Precipitation? precipitation, int humidity, int windStrength, WindDirection? windDirection)
         {
-            Date = date;
+            Date = date.Date;
 
             if (MinTemp <= MaxTemp)
             {
@@ -76,7 +76,7 @@ namespace Weather
         public string Info()
         {
             string info =
-                $"Дата: {Date.Date.ToString()};\n" +
+                $"Дата: {Date.ToString("d")};\n" +
                 $"Минимальная температура: {MinTemp}°C;\n" +
                 $"Максимальная температура: {MaxTemp}°C;\n";
 
