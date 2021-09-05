@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Airline
 {
-    public abstract class Crew : Airline
+    public abstract class Crew 
     {
         protected string Name { get; set; }
         protected string Surname { get; set; }

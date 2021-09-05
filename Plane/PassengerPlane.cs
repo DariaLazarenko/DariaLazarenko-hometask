@@ -47,7 +47,6 @@ namespace Airline
                 }
             }
         }
-
         public override string ToString()
         {
             string info =

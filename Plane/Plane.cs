@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Airline
 {
-    public abstract class Plane : Airline
+    public abstract class Plane
     {
         protected string Model { get; set; }
         protected int Number { get; set; }
@@ -17,7 +17,6 @@ namespace Airline
 
         public abstract void AddCrew();
         //public abstract void CheckCrew();
- 
     }
 
     public enum PlaneType
